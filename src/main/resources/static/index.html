@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+    <head>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PrzePoCzytacze</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/books.css" type="text/css">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <header>
+
+                <nav class="navbar d-block position:sticky-top navbar-expand-lg navbar-dark">         
+                    
+                    <a class="navbar-brand p-4 d-lg-xl-block" style="color: rgb(187, 179, 179)" href="#">Po<span style="color: rgb(158, 75, 75)">Prze</span>Czytane<span style="color: rgb(158, 75, 75)">.pl</span></a>                
+                    
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    
+
+                    <div class="collapse navbar-collapse" id="collapsibleNavId" ng-controller="BrowserController as brBtCtrl">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#!news">Aktualności</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" ng-click="brBtCtrl.all()" href="#!books/0">Książki</a>
+                            </li>
+                            <li class="nav-item dropdown pl-2">
+                                <a class="nav-link dropdown-toggle" href="#!comics" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Komiksy</a>
+                                <div class="dropdown-menu disabled" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="#">Marvel</a>
+                                    <a class="dropdown-item" href="#">DC</a>
+                                    <a class="dropdown-item" href="#">inne</a>
+                                </div>
+                            </li>
+                            <li class="nav-item pl-2">
+                                <a class="nav-link disabled" href="#">Manga</a>
+                            </li>
+                            
+                            <li class="nav-item pl-2" ng-show="!authenticated">
+                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#modelId">Zaloguj</a>
+                            </li>
+                            <li class="nav-item dropdown pl-2" ng-cloak ng-hide="!authenticated">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zalogowano</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                    <a class="dropdown-item" href="#">Marvel</a>
+                                    <a class="dropdown-item" href="#!addBook">Dodaj książkę</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" ng-controller="AuthenticationController as AuthController" ng-click="AuthController.logout()">Wyloguj</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <form class="form-inline my-2 my-lg-0" ng-controller="BrowserController as brBtCtrl">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Wpisz dane" ng-model="brBtCtrl.data">
+                            <a class="btn btn-outline-success my-2 my-sm-0" type="submit" ng-click="brBtCtrl.search()" href="#!books/0">Wyszukaj</a>
+                        </form>
+                    </div>
+                </nav>
+
+
+                <!-- Modal -->
+                <div class="modal dark" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Zaloguj do PrzePoCzytane.pl</h5>
+                            </div>
+                        <div class="modal-body" ng-controller="AuthenticationController as authCtrl">
+                        <div class="container-fluid">
+
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleLogin1">Nazwa użytkownika</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="authCtrl.cred.username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">hasło</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" ng-model="authCtrl.cred.password">
+                                </div> 
+                                    <button class="btn btn-primary" ng-click="authCtrl.login()" data-dismiss="modal">Zaloguj</button>
+                                    </form>
+                                    <a href="#!registration">Załóż konto</a>
+                                </div>
+                                </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                                
+                                <!-- <script>
+                                    $('#exampleModal').on('show.bs.modal', event => {
+                                        var button = $(event.relatedTarget);
+                                        var modal = $(this);
+                                        // Use above variables to manipulate the DOM
+                                        
+                                    });
+                                </script> -->
+
+
+                        </header>
+
+
+            <div id="article">
+                <div ng-view></div>
+            </div>
+            <footer>
+                <div id="footer"></div>
+
+            </footer>
+        </div>
+
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route-styles/route-styles.js"></script>
+        <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+        <script type="text/javascript" src="bower_components/angular-resource/angular-resource.js"></script>
+        <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+        <!-- <script type="text/javascript" src="bower_components/angular-messages/angular-messages.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    
+        <script type="text/javascript" src="app/app.js"></script>
+    </body>
+</html>

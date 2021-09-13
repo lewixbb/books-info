@@ -1,0 +1,12 @@
+<div class="books">
+
+    <div class="book" ng-repeat="b in brCtrl.books.content">
+        <a ng-href="#!details/{{b.id}}">{{b.id}} {{b.title}}  - {{b.author}} {{b.category}}</a>
+    </div>
+</div>
+
+<div class="pageBarFormat" ng-show="pageBarShow">
+<div class="pagination" ng-repeat="p in brCtrl.page">
+    <div class={{p.pageActive}}><a ng-href={{p.pageAdress}}>{{p.pageMarker}}</a></div> 
+</div>
+</div>

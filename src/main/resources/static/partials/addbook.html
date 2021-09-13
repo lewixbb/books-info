@@ -1,0 +1,18 @@
+<div ng-controller="UploadFileController as uploadCtrl" ng-show="authenticated">
+
+    <h1>Dodaj pozycję : </h1>
+
+    <form enctype="multipart/form-data">
+        <input type="file" accept="image/x-png,image/gif,image/jpeg" file-model="myForm.file"/>
+
+
+        <div><h4>tytuł :        </h4><input type="text" placeholder="tytuł" ng-model="uploadCtrl.book.title"></div>
+        <div><h4>autor :        </h4><input type="text" placeholder="autor" ng-model="uploadCtrl.book.author"></div>
+        <div><h4>kategoria :    </h4><input type="text" placeholder="kategoria" ng-model="uploadCtrl.book.category"></div>
+
+
+        <button type="button" ng-click="uploadFile()">Upload</button>
+    </form>
+
+</div>
+

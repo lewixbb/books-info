@@ -1,0 +1,51 @@
+<form name="userForm" novalidate ng class="{'form-error':submitted}">
+    
+    <div class="form-group">
+        <label for="exampleLogin1">Nazwa użytkownika</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" ng-model="regCtrl.User.username" name="username" 
+        ng-minlength="3" ng-maxlength="15" required>
+        <div ng-messages="userForm.username.$error"  role="alert" class="error-messages" ng-show="userForm.$invalid && submitted">
+            <p ng-message="minlength">pole musi mieć minimum 3 litery</p>
+            <p ng-message="maxlength">pole nie może być dłuższe niż 15 liter</p>
+            <p ng-message="required">pole nie może zostać puste</p>
+            <div ng-repeat="err in regCtrl.errors">
+                <p ng-message="{{err.code}}">{{err.defaultMessage}}</p>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleLogin1">email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ng-model="regCtrl.User.email" name="email"
+        required >
+        <div ng-messages="userForm.email.$error" ng-show="userForm.$invalid && submitted" role="alert" class="error-messages" ng-show="userForm.$invalid && submitted">
+            <p ng-message="email">podaj prawidłowy adress email</p>
+            <p ng-message="required">pole nie może zostać puste</p>
+            <div ng-repeat="err in regCtrl.errors">
+                <p ng-message="{{err.code}}">{{err.defaultMessage}}</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputPassword1">hasło</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" ng-model="regCtrl.User.password" name="password" required>
+        <div ng-messages="userForm.password.$error" ng-show="userForm.$invalid && submitted" role="alert" class="error-messages" ng-show="userForm.$invalid && submitted">
+            <div ng-repeat="err in regCtrl.errors">
+                <p ng-message="{{err.code}}">{{err.defaultMessage}}</p>
+            </div>
+        </div>
+    </div> 
+    
+    <div class="form-group">
+        <label for="exampleInputPassword1">powtórz hasło</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" ng-model="regCtrl.User.matchingPassword" name="matchingPassword" required >
+        <div ng-messages="userForm.matchingPassword.$error" ng-show="userForm.$invalid && submitted" role="alert" class="error-messages" ng-show="userForm.$invalid && submitted">
+            <div ng-repeat="err in regCtrl.errors">
+                <p ng-message="{{err.code}}">{{err.defaultMessage}}</p>
+            </div>
+        </div>
+    </div> 
+        <button class="btn btn-primary" ng-click="regCtrl.createAcc()" type="submit">Utwórz</button>
+</form>

@@ -1,0 +1,205 @@
+[ng\:cloak],[ng-cloak], .ng-cloak {display : none;}
+
+body
+{
+    margin: 0;
+    background-color : rgb(46, 45, 45);
+    color :rgb(187, 179, 179);
+    font-family: 'Roboto Mono', monospace;
+}
+
+.container
+{
+    width:auto;
+    max-width: 1100px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(31, 28, 28);
+    margin-bottom: 0;
+    padding: 0;
+    
+}
+
+#article
+{
+    margin: 0;
+    padding: 0;
+    width:auto;
+    max-width: 1100px;
+    min-height: 748px;
+    height:fit-content;
+    background-color: rgb(187, 179, 179);
+    color: rgb(46, 45, 45);
+}
+
+#footer
+{
+    margin: 0;
+    width: 100%;
+    height: 60px; 
+    color :rgb(187, 179, 179);
+    margin-bottom: 0;
+}
+
+.navbar .btn
+{
+    color: rgb(158, 75, 75);
+    border-color: rgb(158, 75, 75);
+    font-size: 15px;
+}
+    
+.btn:hover
+{
+    border-color: rgb(158, 75, 75);
+    background-color: rgb(158, 75, 75);
+    color: rgb(187, 179, 179);
+}
+
+.btn:focus,.btn.focus
+{
+    box-shadow: none;
+}
+
+/* .btn.disabled,.btn:disabled
+{color:#fff;background-color:teal;border-color:#005a5a} */
+
+.btn:not(:disabled):not(.disabled):active,.btn:not(:disabled):not(.disabled).active,.show>.btn.dropdown-toggle
+{
+    border-color: rgb(134, 63, 63);
+    background-color: rgb(134, 63, 63);
+    color: rgb(187, 179, 179);
+}
+
+.btn:not(:disabled):not(.disabled):active:focus,.btn:not(:disabled):not(.disabled).active:focus,.show>.btn.dropdown-toggle:focus
+{
+    box-shadow: none;
+}
+
+.form-control
+{
+    font-size: 14px;
+}
+
+.form-control:focus
+{
+    outline-color: rgb(158, 75, 75);
+    border-color: rgb(158, 75, 75);
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(158, 75, 75); 
+    box-shadow: 0px 0px 5px 2px rgba(158, 75, 75);
+}
+
+.navbar
+{
+    font-size: 16px;
+}
+
+.navbar-brand
+{
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+#mylogo 
+{
+    font-size : 44 px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 0 ;
+    margin-top: 0;
+    padding: 40px;
+    }
+
+nav
+{
+    background-color: rgb(31, 28, 28); 
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.barList
+{
+    padding:0;
+    margin:0;
+    list-style-type: none;
+    font-size: 18 px;
+    height: 35px;
+    line-height: 200%;
+    display: inline-block;
+    color: rgb(187, 179, 179);
+    text-decoration: none;
+    display: block;
+    background-color: rgb(31, 28, 28); 
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.barList a
+{
+    color: rgb(187, 179, 179);
+    text-decoration: none;
+    display: block;
+}
+
+.modal-heder,
+.modal-content,
+.modal-footer
+{
+    background-color: rgb(187, 179, 179);
+    color: rgb(31, 28, 28);
+    font-weight: bold;
+}
+
+.modal-header > h5
+{
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal .btn
+{
+    background-color: rgb(31, 28, 28);
+    border-color: rgb(31, 28, 28);
+    color:rgb(187, 179, 179);
+}
+
+.modal .btn:hover
+{
+    background-color: rgb(158, 75, 75);
+    border-color: rgb(158, 75, 75);
+    color:rgb(187, 179, 179);
+}
+
+.nav-link
+{
+    color : rgb(187, 179, 179) !important;
+}
+
+.nav-link:hover
+{
+    color :rgb(221, 221, 221) !important;
+}
+
+#collapsibleNavId
+{
+    text-align: left;
+}
+
+.modal input
+{
+    border: 1px solid rgb(31, 28, 28);
+}
+
+.form-error input.ng-invalid {
+    border-color:red;
+}
+
+.error-messages {
+    color:red;
+}

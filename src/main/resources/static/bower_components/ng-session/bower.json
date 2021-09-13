@@ -1,0 +1,36 @@
+{
+  "title": "Angular Session Handler",
+  "name": "ng-session",
+  "version": "1.3.3",
+  "homepage": "https://github.com/FinalDevStudio/ng-session",
+  "description": "Session handler module for AngularJS",
+  "authors": [
+    "Santiago G. Marín <santiago@finaldevstudio.com>"
+  ],
+  "main": [
+    "dist/ng-session.js"
+  ],
+  "keywords": [
+    "angular",
+    "session",
+    "handler",
+    "service"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".eslintrc.json",
+    ".editorconfig",
+    "karma.conf.js",
+    ".eslintignore",
+    ".jsbeautifyrc",
+    "node_modules",
+    "package.json",
+    "gulpfile.js",
+    ".travis.yml",
+    ".gitignore",
+    "*.log",
+    "docs",
+    "test",
+    "src"
+  ]
+}

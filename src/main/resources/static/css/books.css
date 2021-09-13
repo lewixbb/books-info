@@ -1,0 +1,113 @@
+.books
+{
+    padding:10px;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 710px;
+}
+
+.book
+{
+    background-color :rgba(213, 199, 198, 0.698);
+    border: 2px, solid, rgb(102, 38, 38);
+    width: 300px;
+    margin: 10px;
+    padding: 15px;
+    height: 160px;
+    float: left;
+    display: block;
+}
+
+.book > a
+{
+    display:block;
+    text-decoration: none;
+    color: rgb(46, 45, 45);
+}
+
+.books > h1
+{
+    font-size: 18;
+}
+
+.details
+{
+    background-color :rgba(213, 199, 198, 0.698);
+    border: 2px, solid, rgb(102, 38, 38);
+    width: 930px;
+    margin: 10px;
+    padding: 15px;
+    min-height: 400px;
+    display: block;
+}
+
+.comment
+{
+    background-color :rgba(213, 199, 198, 0.698);
+    border: 2px, solid, rgb(102, 38, 38);
+    width: 930px;
+    margin: 0px 10px 10px 10px;
+    padding: 15px;
+    display: block;
+}
+
+.addComment
+{
+    padding: 15px;
+}
+
+.addComment > form > textarea
+{
+    color:brown;
+    resize:none;
+}
+
+.pageBarFormat
+{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 45px; 
+    padding: 0px 0px 20px 0px;
+}
+
+.pagination
+{
+    display: inline-block;
+}
+
+.pageNr
+{
+    border: 1px solid rgb(102, 38, 38);
+    background-color :rgba(213, 199, 198, 0.698);
+    width: 35px;
+    height: 35px;
+    margin: 10px;
+    display: block;
+}
+
+.pageNr:hover
+{
+    background-color : rgb(168, 120, 120);
+}
+
+.active
+{
+    background-color : rgb(158, 75, 75);
+    color: rgba(213, 199, 198, 0.698);
+}
+
+.pagination a
+{
+    text-decoration: none;
+    display: block;
+    padding: 6px 5px 5px 5px;
+    color: rgb(46, 45, 45);
+    
+}
+
+.active a, .pageNr:hover 
+{
+    color: rgba(213, 199, 198, 0.698);
+}

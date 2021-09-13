@@ -1,0 +1,15 @@
+{
+  "name": "angular-ngStorage",
+  "homepage": "https://github.com/hackpar/angular-ngStorage",
+  "version": "1.0.0",
+  "_release": "1.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.0",
+    "commit": "b3bf9de0b3acd5e2949631c5687dd2c08baa09a0"
+  },
+  "_source": "https://github.com/hackpar/angular-ngStorage.git",
+  "_target": "^1.0.0",
+  "_originalSource": "angular-ngStorage",
+  "_direct": true
+}

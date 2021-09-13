@@ -1,0 +1,41 @@
+name: Tests
+
+on:
+  push:
+    branches: master
+
+env:
+  NODE_VERSION: 14
+
+jobs:
+  test:
+    name: Karma
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - run: node --version
+      - run: npm --version
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: NPM Install
+        run: npm ci
+
+      - name: Coffee to Js
+        run: npm run build
+
+      - name: Run Karma tests
+        run: npm run test

@@ -1,0 +1,20 @@
+extends:
+  - pegasus
+
+plugins:
+  - angular
+
+overrides:
+  - files: '!src/*'
+    extends:
+      - pegasus/node
+    rules:
+      no-console: off
+  - files: 'tests/*'
+    rules:
+      func-style: off
+
+env:
+  browser: true
+  jasmine: true
+  angular/mocks: true

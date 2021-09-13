@@ -1,0 +1,54 @@
+{
+  "name": "angularjs-file-model",
+  "version": "1.0.9",
+  "description": "AngularJS directive to support NgModel for HTML input file types",
+  "license": "MIT",
+  "private": true,
+  "author": "sibiraj-s",
+  "repository": "https://github.com/sibiraj-s/angularjs-file-model.git",
+  "bugs": "https://github.com/sibiraj-s/angularjs-file-model/issues",
+  "homepage": "https://github.com/sibiraj-s/angularjs-file-model",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "lint:js": "eslint . --ignore-path .gitignore",
+    "lint": "npm run lint:js",
+    "build": "grunt build",
+    "develop": "grunt develop",
+    "test": "karma start --single-run",
+    "test:watch": "karma start",
+    "watch": "grunt watch"
+  },
+  "keywords": [
+    "angularjs-file-model",
+    "ng-file-model",
+    "angularjs-file",
+    "ng-file"
+  ],
+  "devDependencies": {
+    "@coffeelint/cli": "^4.1.2",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "angular": "^1.8.2",
+    "angular-mocks": "^1.8.2",
+    "chalk": "^4.1.0",
+    "coffeelint-reporter": "^2.0.2",
+    "eslint": "^7.15.0",
+    "eslint-config-pegasus": "^2.0.0",
+    "eslint-plugin-angular": "^4.0.1",
+    "grunt": "^1.3.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-coffee": "^2.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "husky": "^4.3.5",
+    "karma": "^5.2.3",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "lint-staged": "^10.5.3",
+    "load-grunt-tasks": "^5.1.0"
+  }
+}

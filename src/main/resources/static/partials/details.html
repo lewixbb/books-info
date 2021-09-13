@@ -1,0 +1,36 @@
+<div class="books">
+
+    <div class="details">
+        
+        {{detailsCtrl.books.title}}     </br>
+        {{detailsCtrl.books.author}}    </br>
+        {{detailsCtrl.books.category}}  </br>
+        <img ng-src="data:image/JPEG;base64,{{detailsCtrl.books.cover.picByte}}" style="width: 200px;height:200px;"></img>
+        
+    </div>
+
+    <div ng-repeat="c in detailsCtrl.books.comments">
+
+        <div class="comment">
+            
+            {{c.commentAuthor}} </br>
+            {{c.comment}}   
+
+        </div>
+    </div>
+
+    <!-- ng-show="authenticated" -->
+
+    <div class="addComment" ng-controller="commentBooksController as commentCtrl" >
+        <form>
+            <div><input type="text" placeholder="nick" ng-model="commentCtrl.comment.commentAuthor"></input></div>
+            <div><textarea role="textbox" cols="80" rows="4" minlength="10" maxlength="300" resize="none" style="resize:none" 
+                id="comment" name="comment" placeholder="maksymalnie 300 znaków" required ng-model="commentCtrl.comment.comment"></textarea></div>
+            <div >
+            <button ng-click="commentCtrl.saveComment()">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
